@@ -49,7 +49,7 @@ public class EmployeeController {
 
 	@CrossOrigin
 	@GetMapping("/employee/{id}")
-	public ResponseEntity<Employee> getEmployeeById(@RequestParam int id) {
+	public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") int id) {
 		try {
 			Optional<Employee> employee = employeeRepository.findById(id);
 			if (employee.isPresent()) {

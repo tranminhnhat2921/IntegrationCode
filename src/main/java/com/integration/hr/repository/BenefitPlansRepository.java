@@ -5,9 +5,9 @@ import java.math.BigDecimal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.integration.hr.model.Employment;
+import com.integration.hr.model.BenefitPlans;
 
 @Repository
-public interface EmploymentRepository extends JpaRepository<Employment, BigDecimal>{
+public interface BenefitPlansRepository extends JpaRepository<BenefitPlans, BigDecimal>{
 
 }

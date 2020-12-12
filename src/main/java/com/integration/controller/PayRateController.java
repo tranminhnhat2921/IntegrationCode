@@ -49,7 +49,7 @@ public class PayRateController {
 
 	@CrossOrigin
 	@GetMapping("/payrate/{id}")
-	public ResponseEntity<PayRate> getPayRateById(@RequestParam int id) {
+	public ResponseEntity<PayRate> getPayRateById(@PathVariable("id") int id) {
 		try {
 			Optional<PayRate> payrate = payrateRepository.findById(id);
 			if (payrate.isPresent()) {
