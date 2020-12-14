@@ -79,7 +79,7 @@ public class PersonalController {
 
 	@CrossOrigin
 	@PutMapping("/personal/{id}")
-	public ResponseEntity<Personal> updatePersonal(@PathVariable("Employee_ID") BigDecimal id, @RequestBody Personal personal) {
+	public ResponseEntity<Personal> updatePersonal(@PathVariable("id") BigDecimal id, @RequestBody Personal personal) {
 		Optional<Personal> personalData = personalRepository.findById(id);
 		if (personalData.isPresent()) {
 			Personal _personal = personalData.get();
@@ -109,7 +109,7 @@ public class PersonalController {
 
 	@CrossOrigin
 	@DeleteMapping("/personal/{id}")
-	public ResponseEntity<HttpStatus> deleteEmployee(@PathVariable("Employee_ID") BigDecimal id) {
+	public ResponseEntity<HttpStatus> deleteEmployee(@PathVariable("id") BigDecimal id) {
 		try {
 			personalRepository.deleteById(id);
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
